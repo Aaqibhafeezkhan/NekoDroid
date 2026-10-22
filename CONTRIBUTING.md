@@ -71,3 +71,17 @@ Then `git status` and confirm `browser-droid/`, `pkg/`, journals, and demo binar
 ## Scope
 
 The APK path is a constrained HLE Dalvik runner, not full Android/ART. Prefer small test APKs without native libs. See `docs/SUPPORTED_APKS.md`.
+
+## Before you start
+
+You need: Rust stable with the `wasm32-unknown-unknown` target, `wasm-pack`, and Node 20 (same as CI).
+
+## Branches
+
+Branch from `main` and name it `fix/<short-name>`, `docs/<short-name>` or `test/<short-name>`. One issue per branch.
+
+## Pull requests
+
+- Link the issue in the description (`Fixes #12`)
+- Say what you changed and how you checked it (paste the `cargo test --lib` summary line, or a screenshot for UI changes)
+- Keep it small. If it touches more than the issue asks for, split it.
