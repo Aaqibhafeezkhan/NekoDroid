@@ -64,23 +64,23 @@ app.innerHTML = `
 
     <div class="controls">
       <button id="btn-noise" class="active">
-        <span class="btn-icon">📺</span>
+        <span class="btn-icon" aria-hidden="true">📺</span>
         Noise
       </button>
       <button id="btn-gradient">
-        <span class="btn-icon">🌈</span>
+        <span class="btn-icon" aria-hidden="true">🌈</span>
         Gradient
       </button>
       <button id="btn-plasma">
-        <span class="btn-icon">🔮</span>
+        <span class="btn-icon" aria-hidden="true">🔮</span>
         Plasma
       </button>
       <button id="btn-vram">
-        <span class="btn-icon">🖥️</span>
+        <span class="btn-icon" aria-hidden="true">🖥️</span>
         VRAM
       </button>
       <button id="btn-pause">
-        <span class="btn-icon">⏸️</span>
+        <span class="btn-icon" aria-hidden="true">⏸️</span>
         Pause
       </button>
     </div>
@@ -114,19 +114,19 @@ app.innerHTML = `
         <h2>🔧 ARMv7 CPU Debug</h2>
         <div class="debug-controls">
           <button id="btn-load-demo" class="debug-btn">
-            <span class="btn-icon">📦</span> Load Demo
+            <span class="btn-icon" aria-hidden="true">📦</span> Load Demo
           </button>
           <button id="btn-load-uart" class="debug-btn" style="background: linear-gradient(135deg, #1a5a2a, #2d8a4e); border-color: #3dbb6e;">
-            <span class="btn-icon">📟</span> Hello UART
+            <span class="btn-icon" aria-hidden="true">📟</span> Hello UART
           </button>
           <button id="btn-step" class="debug-btn">
-            <span class="btn-icon">⏭️</span> Step
+            <span class="btn-icon" aria-hidden="true">⏭️</span> Step
           </button>
           <button id="btn-run10" class="debug-btn">
-            <span class="btn-icon">⏩</span> Run 10
+            <span class="btn-icon" aria-hidden="true">⏩</span> Run 10
           </button>
           <button id="btn-run" class="debug-btn" style="background: linear-gradient(135deg, #065f46, #059669); border-color: #10b981;">
-            <span class="btn-icon">▶️</span> Run
+            <span class="btn-icon" aria-hidden="true">▶️</span> Run
           </button>
         </div>
       </div>
@@ -143,36 +143,36 @@ app.innerHTML = `
         <div class="disasm-lines" id="disasm-lines"></div>
       </div>
       <div class="hex-upload-panel">
-        <div class="hex-upload-header">CUSTOM PROGRAM</div>
+        <label for="hex-input" class="hex-upload-header" style="display: block;">CUSTOM PROGRAM</label>
         <textarea id="hex-input" class="hex-input" rows="4"
           placeholder="Paste ARM hex: e3a00005 e3a0100a e0802001"></textarea>
         <button id="btn-upload-hex" class="debug-btn hex-upload-btn">
-          <span class="btn-icon">⬆️</span> Upload to RAM
+          <span class="btn-icon" aria-hidden="true">⬆️</span> Upload to RAM
         </button>
         <div class="rom-upload-header" style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted); letter-spacing: 0.15em;">LOAD COMPILED ROM (.bin)</div>
         <input type="file" id="rom-file-input" accept=".bin" style="display: none;" />
         <button id="btn-upload-rom" class="debug-btn hex-upload-btn" style="background: linear-gradient(135deg, #4c1d95, #7c3aed); border-color: #a855f7;">
-          <span class="btn-icon">💿</span> Select & Load .bin
+          <span class="btn-icon" aria-hidden="true">💿</span> Select & Load .bin
         </button>
         <div class="linux-upload-section" style="margin-top: 15px; padding: 10px; border: 1px dashed var(--border-color);">
-          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-bottom: 5px;">LINUX KERNEL (.zImage)</div>
+          <label for="kernel-input" style="display: block; font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-bottom: 5px;">LINUX KERNEL (.zImage)</label>
           <input type="file" id="kernel-input" accept=".zImage,Image" />
 
-          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-top: 10px; margin-bottom: 5px;">INITRAMFS (.cpio.gz)</div>
+          <label for="initrd-input" style="display: block; font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-top: 10px; margin-bottom: 5px;">INITRAMFS (.cpio.gz)</label>
           <input type="file" id="initrd-input" accept=".cpio.gz,.cpio" />
 
           <button id="btn-boot-linux" class="debug-btn hex-upload-btn" style="width: 100%; margin-top: 15px; background: linear-gradient(135deg, #059669, #10b981); border-color: #34d399;">
-            <span class="btn-icon">🐧</span> BOOT LINUX
+            <span class="btn-icon" aria-hidden="true">🐧</span> BOOT LINUX
           </button>
         </div>
         <div class="apk-upload-section" style="margin-top: 15px; padding: 10px; border: 1px dashed var(--border-color);">
           <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-bottom: 5px;">APK (HLE DEX — not full Android)</div>
           <input type="file" id="apk-file-input" accept=".apk" style="display: none;" />
           <button id="btn-upload-apk" class="debug-btn hex-upload-btn" style="background: linear-gradient(135deg, #9a3412, #ea580c); border-color: #fb923c;">
-            <span class="btn-icon">📦</span> Load APK
+            <span class="btn-icon" aria-hidden="true">📦</span> Load APK
           </button>
           <button id="btn-run-apk" class="debug-btn hex-upload-btn" style="margin-top: 8px; background: linear-gradient(135deg, #1e3a8a, #2563eb); border-color: #60a5fa;">
-            <span class="btn-icon">▶️</span> Run APK (HLE)
+            <span class="btn-icon" aria-hidden="true">▶️</span> Run APK (HLE)
           </button>
           <pre id="apk-logcat" style="margin-top: 8px; max-height: 120px; overflow: auto; font-size: 0.65rem; white-space: pre-wrap;"></pre>
         </div>
@@ -429,7 +429,7 @@ async function main() {
     btnPause.addEventListener('click', () => {
       paused = !paused;
       btnPause.querySelector('.btn-icon')!.textContent = paused ? '▶️' : '⏸️';
-      btnPause.childNodes[1].textContent = paused ? ' Resume' : ' Pause';
+      btnPause.lastChild!.textContent = paused ? ' Resume' : ' Pause';
       addLog(paused ? 'Rendering paused' : 'Rendering resumed');
     });
 

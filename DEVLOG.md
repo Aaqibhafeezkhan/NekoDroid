@@ -2127,3 +2127,18 @@ char* msg = "Application started";
 - Leaves stub error path; PC ~`0x152ec` in early kernel (still no "Linux version")
 - Next: early MMU / page tables / more UART after stext
 
+
+---
+
+## Session 63 — Screen-reader labels (2026-10-23)
+
+### Fix
+- Associate the existing captions with the hex textarea and kernel/initramfs file inputs; retain their block layout.
+- Hide decorative button emoji from assistive technology while keeping the visible captions.
+- Update the Pause/Resume caption's trailing text node so it stays outside the hidden icon span.
+
+### Checks
+- `cargo test --lib`: 140 passed, 0 failed.
+- `npm run build:wasm` and `npm run build`: passed.
+- Chrome's accessibility tree reports all three labels and text-only names for all 15 buttons; Pause/Resume names toggle correctly.
+- At 1280px and 390px viewport widths, before/after control geometry and screenshots match with animation and volatile console text disabled equally. No physical screen reader was tested.
