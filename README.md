@@ -6,6 +6,8 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="MIT License" />
 </p>
 
+[![Sponsor](https://readme.cash/i/v9i9dvtyaj.svg)](https://readme.cash/c/v9i9dvtyaj)
+
 # nekodroid
 
 Browser-native ARM emulator in Rust/WebAssembly, with a **constrained APK/DEX HLE runner**. The long-term goal is richer Android support. Today you can run bare-metal ARM binaries, explore Linux boot plumbing, and run a small hello APK through Dalvik HLE (not full ART/AOSP).
